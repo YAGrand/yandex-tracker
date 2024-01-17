@@ -1,5 +1,5 @@
 {
-    "name": "bugrov/yandex-tracker",
+    "name": "yagrand/yandex-tracker",
     "description": "PHP SDK для работы с Яндекс.Трекером",
     "keywords": ["yandex", "tracker", "яндекс", "трекер", "yandex tracker", "яндекс трекер", "php", "api", "sdk", "client"],
     "type": "library",
@@ -13,7 +13,11 @@
         {
             "name": "bugrov",
             "email": "a.bugrov@intensa.ru"
-        }
+        },
+        {
+            "name": "yagrand",
+            "email": "yagrand@ba.ru"
+        },
     ],
     "require": {
         "guzzlehttp/guzzle": "^7.0.1",
