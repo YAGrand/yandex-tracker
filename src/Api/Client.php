@@ -46,6 +46,15 @@ class Client
      */
     protected string $orgId;
 
+    /**
+     * @var string Тип организации
+     */
+    protected int $orgType = 0;
+    protected array $orgTypesHeadderNames = [
+        'X-Org-ID',
+        'X-Cloud-Org-ID',
+    ];
+
     private static ?Client $instance = null;
 
     public static function getInstance(): self
@@ -84,6 +93,25 @@ class Client
     }
 
     /**
+     * Устанавливает тип организации
+     *
+     * @param integer $orgType 0 - Яндекс 360 для бизнеса, 1 - Если у вас только организация Yandex Cloud Organization
+     * @return $this
+     */
+    public function setOrgType(int $orgType = 0): self
+    {
+        $this->orgType = $orgType;
+
+        return $this;
+    }
+
+    public function getOrgIdHeadderName(): string
+    {
+        
+        return $this->orgTypesHeadderNames[$this->orgType];
+    }
+
+    /**
      * Устанавливает флаг isMultiPartRequest
      *
      * @param bool $set
@@ -113,7 +141,7 @@ class Client
         $options = [
             'headers'=> [
                 'Authorization' => 'OAuth '.$this->token,
-                'X-Org-ID'      => $this->orgId,
+                $this->getOrgIdHeadderName()      => $this->orgId,
             ],
         ];
 

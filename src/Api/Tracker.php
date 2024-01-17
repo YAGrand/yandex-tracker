@@ -27,10 +27,18 @@ use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
 
 class Tracker
 {
-    public function __construct(string $token, string $xOrgId)
+    /**
+     * Undocumented function
+     *
+     * @param string $token
+     * @param string $xOrgId
+     * @param integer $orgType 0 - Яндекс 360 для бизнеса, 1 - Если у вас только организация Yandex Cloud Organization
+     */
+    public function __construct(string $token, string $xOrgId, int $orgType = 0)
     {
         Client::getInstance()->setToken($token);
         Client::getInstance()->setOrgId($xOrgId);
+        Client::getInstance()->setOrgType($orgType);
     }
 
     /**
