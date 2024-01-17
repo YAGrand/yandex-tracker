@@ -16,8 +16,8 @@
         },
         {
             "name": "yagrand",
-            "email": "yagrand@ba.ru"
-        },
+            "email": "yagrand@live.ru"
+        }
     ],
     "require": {
         "guzzlehttp/guzzle": "^7.0.1",
