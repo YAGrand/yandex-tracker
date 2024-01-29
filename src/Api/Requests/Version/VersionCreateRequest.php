@@ -1,11 +1,11 @@
 <?php
 
-namespace BugrovWeb\YandexTracker\Api\Requests\Queue;
+namespace BugrovWeb\YandexTracker\Api\Requests\Version;
 
 use BugrovWeb\YandexTracker\Api\Client;
 
 /**
- * Класс-конструктор для запроса к POST /v2/queues/$queueId/versions
+ * Класс-конструктор для запроса к POST /v2/versions
  *
  * @see https://cloud.yandex.ru/ru/docs/tracker/concepts/queues/create-version
  *
@@ -15,9 +15,9 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method QueueCreateVersionRequest startDate(string $startDate) Дата начала в формате YYYY-MM-DD
  * @method QueueCreateVersionRequest dueDate(string $dueDate) Дата окончания в формате YYYY-MM-DD
  */
-class QueueCreateVersionRequest extends QueueRequest
+class VersionCreateRequest extends VersionRequest
 {
-    const ACTION = 'queues';
+    const ACTION = 'versions';
     const METHOD = Client::METHOD_POST;
 
     /**
@@ -39,8 +39,8 @@ class QueueCreateVersionRequest extends QueueRequest
         'dueDate',
     ];
 
-    public function __construct(string $queueId)
+    public function __construct()
     {
-        $this->url = self::ACTION.'/'.$queueId.'/versions';
+        $this->url = self::ACTION;
     }
 }
