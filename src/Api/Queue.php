@@ -25,6 +25,7 @@ use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
  * @method QueueGetRequest get(string|int $queueId) Получить параметры очереди
  * @method QueueGetAllRequest getAll() Получить список очередей
  * @method QueueGetVersionsRequest getVersions(string|int $queueId) Получить версии очереди
+ * @method QueueCreateVersionRequest createVersion(string|int $queueId) Создать версию
  * @method QueueGetFieldsRequest getFields(string|int $queueId) Получить обязательные поля очереди
  * @method QueueDeleteRequest delete(string|int $queueId) Удалить очередь
  * @method QueueRestoreRequest restore(string|int $queueId) Восстановить очередь
