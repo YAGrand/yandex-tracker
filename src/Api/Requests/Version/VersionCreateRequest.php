@@ -9,11 +9,11 @@ use BugrovWeb\YandexTracker\Api\Client;
  *
  * @see https://cloud.yandex.ru/ru/docs/tracker/concepts/queues/create-version
  *
- * @method QueueCreateVersionRequest name(string $name) Название версии. Обязательное
- * @method QueueCreateVersionRequest queue(string $queue) Id очереди. Обязательное
- * @method QueueCreateVersionRequest description(string $description) Описание.
- * @method QueueCreateVersionRequest startDate(string $startDate) Дата начала в формате YYYY-MM-DD
- * @method QueueCreateVersionRequest dueDate(string $dueDate) Дата окончания в формате YYYY-MM-DD
+ * @method VersionCreateRequest name(string $name) Название версии. Обязательное
+ * @method VersionCreateRequest queue(string $queue) Id очереди. Обязательное
+ * @method VersionCreateRequest description(string $description) Описание.
+ * @method VersionCreateRequest startDate(string $startDate) Дата начала в формате YYYY-MM-DD
+ * @method VersionCreateRequest dueDate(string $dueDate) Дата окончания в формате YYYY-MM-DD
  */
 class VersionCreateRequest extends VersionRequest
 {
