@@ -18,11 +18,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method IssueEditRequest type(array|string|int $issueType) Тип задачи
  * @method IssueEditRequest priority(array|string|int $priority) Приоритет задачи
  * @method IssueEditRequest followers(array $followersArray) Идентификаторы или логины наблюдателей задачи
+ * @method \BugrovWeb\YandexTracker\Api\Responses\IssueResponse send()
  */
 class IssueEditRequest extends IssueRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_PATCH;
+    protected static ?string $entityName = 'IssueEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

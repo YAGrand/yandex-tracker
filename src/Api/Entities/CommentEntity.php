@@ -15,14 +15,14 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method DateTime getUpdatedAt()
  * @method int getVersion()
  */
-class Comment extends Entity
+class CommentEntity extends Entity
 {
     protected string $self;
     protected int $id;
     protected string $longId;
     protected string $text;
-    protected User $createdBy;
-    protected User $updatedBy;
+    protected UserEntity $createdBy;
+    protected UserEntity $updatedBy;
     protected DateTime $createdAt;
     protected DateTime $updatedAt;
     protected int $version;

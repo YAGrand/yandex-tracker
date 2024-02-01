@@ -6,6 +6,7 @@ use ReflectionClass;
 
 class Entity
 {
+
     function __construct(array $fromArray = null)
     {
         if($fromArray){
@@ -13,11 +14,14 @@ class Entity
         }
     }
 
-    public function applyArray(array $data):self
+    protected function applyArray(array $data):self
     {
         $reflection = new ReflectionClass(static::class);
         foreach($data as $propertyName=>$propertyValue){
-            
+            if(!$reflection->hasProperty($propertyName)){
+                $this->{$propertyName} = $propertyValue;
+                continue;
+            }
             $property = $reflection->getProperty($propertyName);
             if(($property&&$property->getType()->isBuiltin())||!$property){
                 $this->{$property->getName()} = $propertyValue;

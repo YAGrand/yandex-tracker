@@ -10,12 +10,14 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @see https://cloud.yandex.ru/docs/tracker/concepts/queues/get-queue
  *
  * @method QueueGetRequest expand(string $field) Дополнительные поля, которые будут включены в ответ
+ * @method \BugrovWeb\YandexTracker\Api\Responses\QueueResponse send()
  */
 class QueueGetRequest extends QueueRequest
 {
     const ACTION = 'queues';
     const METHOD = Client::METHOD_GET;
 
+    protected static ?string $entityName = 'QueueEntity';
     /**
      * @var array|string[] Данные для отправки в запросе
      */

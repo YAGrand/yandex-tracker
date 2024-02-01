@@ -2,10 +2,15 @@
 
 namespace BugrovWeb\YandexTracker\Api;
 
+use BugrovWeb\YandexTracker\Api\Entities\Entity;
+use BugrovWeb\YandexTracker\Api\Entities\EntityCollection;
 use Psr\Http\Message\ResponseInterface;
 
 class ClientResponse
 {
+    
+    protected ?string $entityName;
+
     /**
      * @var int $httpCode HTTP-код ответа
      */
@@ -21,11 +26,32 @@ class ClientResponse
      */
     protected array $headers;
 
-    public function __construct(ResponseInterface $response)
+    public function __construct(ResponseInterface $response, string $entityName = null)
     {
+        $this->entityName = $entityName;
         $this->httpCode = $response->getStatusCode();
         $this->headers = $response->getHeaders();
         $this->body = json_decode($response->getBody(), true);
+    }
+
+    /**
+     * Возвращает тело ответа
+     *
+     * @return Entity|EntityCollection
+     */
+    public function getResponseEntity()
+    {
+        if(empty($this->entityName)){
+            throw new \Exception('$entityName is empty!');
+        }
+        
+        $entityClassName = $this->entityName;
+        if(!class_exists($entityClassName)){
+            throw new \Exception('Entity class "'.$entityClassName.'" not exists!');
+        }
+
+        return new $entityClassName($this->body);
+
     }
 
     /**
@@ -49,7 +75,7 @@ class ClientResponse
     }
 
     /**
-     * Возращает массив заданного заголовка
+     * Возвращает массив заданного заголовка
      *
      * @param string $header Название HTTP-заголовка
      * @return array|string|false

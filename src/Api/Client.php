@@ -134,7 +134,7 @@ class Client
      * @throws TrackerBadResponseException
      * @throws TrackerBadParamsException
      */
-    protected function getResponse(string $url, string $method, $body): ClientResponse
+    protected function getResponse(string $url, string $method, $body, string $entityName = null): ClientResponse
     {
         $client = new HttpClient(['base_uri' => self::HOST_API.'/'.self::API_VERSION.'/']);
 
@@ -202,7 +202,7 @@ class Client
             }
         }
 
-        return new ClientResponse($response);
+        return new ClientResponse($response, $entityName);
     }
 
     /**
@@ -223,7 +223,8 @@ class Client
         string $method,
         string $url,
         $body,
-        array  $queryParams = []
+        array  $queryParams = [],
+        string $entityName = null
     ): ClientResponse
     {
         $queryParams = $this->prepareQuery($queryParams);
@@ -238,7 +239,7 @@ class Client
             case self::METHOD_POST:
             case self::METHOD_PATCH:
             case self::METHOD_PUT:
-                return $this->getResponse($methodUrl, $method, $body);
+                return $this->getResponse($methodUrl, $method, $body, $entityName);
             default:
                 throw new TrackerBadMethodException("Недопустимое значение метода: $method. Допустимые: GET, POST, PATCH, PUT, DELETE");
         }

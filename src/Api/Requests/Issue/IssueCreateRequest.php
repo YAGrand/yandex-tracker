@@ -20,11 +20,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method IssueCreateRequest assignee(array|string $assignee) Идентификатор или логин исполнителя задачи
  * @method IssueCreateRequest unique(string $uniqueField) Поле с уникальным значением, позволяющее предотвратить создание дубликатов задач
  * @method IssueCreateRequest attachmentIds(array|string[] $attachments) Список идентификаторов вложений
+ * @method \BugrovWeb\YandexTracker\Api\Responses\IssueResponse send()
  */
 class IssueCreateRequest extends IssueRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_POST;
+    protected static ?string $entityName = 'IssueEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

@@ -23,11 +23,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method IssueSearchRequest query(string $filter) Фильтр на языке запросов Яндекс.Трекера
  * @method IssueSearchRequest keys(string $issueKeys) Список ключей задач
  * @method IssueSearchRequest queue(string $queue) Очередь задач
+ * @method \BugrovWeb\YandexTracker\Api\Responses\IssueCollectionResponse send()
  */
 class IssueSearchRequest extends IssueRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_POST;
+    protected static ?string $entityName = 'IssueEntityCollection';
 
     /**
      * @var array|string[] Данные для отправки в запросе
