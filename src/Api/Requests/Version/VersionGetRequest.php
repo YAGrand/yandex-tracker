@@ -9,11 +9,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  *
  * @see https://cloud.yandex.ru/ru/docs/tracker/concepts/queues/create-version
  *
+ * @method \BugrovWeb\YandexTracker\Api\Responses\VersionResponse send()
  */
 class VersionGetRequest extends VersionRequest
 {
     const ACTION = 'versions';
     const METHOD = Client::METHOD_GET;
+    protected static ?string $entityName = 'VersionEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

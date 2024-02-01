@@ -14,11 +14,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method VersionEditRequest description(string $description) Описание.
  * @method VersionEditRequest startDate(string $startDate) Дата начала в формате YYYY-MM-DD
  * @method VersionEditRequest dueDate(string $dueDate) Дата окончания в формате YYYY-MM-DD
+ * @method \BugrovWeb\YandexTracker\Api\Responses\VersionResponse send()
  */
 class VersionEditRequest extends VersionRequest
 {
     const ACTION = 'versions';
     const METHOD = Client::METHOD_PATCH;
+    protected static ?string $entityName = 'VersionEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

@@ -2,6 +2,7 @@
 
 namespace BugrovWeb\YandexTracker\Api\Entities;
 
+use BugrovWeb\YandexTracker\Api\Client;
 use ReflectionClass;
 
 class Entity
@@ -31,6 +32,16 @@ class Entity
             }
         }
         return $this;
+    }
+
+    /**
+     * Experemental! Refill entity from Yandex.Tracker
+     *
+     * @return $this
+     */
+    public function refillEntity()
+    {
+        return $this->applyArray(Client::getInstance()->prepareRequest('GET', $this->getSelf(), '')->getResponse());
     }
 
     public function __call($name, $arguments)

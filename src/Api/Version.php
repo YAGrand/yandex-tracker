@@ -3,6 +3,10 @@
 namespace BugrovWeb\YandexTracker\Api;
 
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionCreateRequest;
+use BugrovWeb\YandexTracker\Api\Requests\Version\VersionEditRequest;
+use BugrovWeb\YandexTracker\Api\Requests\Version\VersionGetRequest;
+use BugrovWeb\YandexTracker\Api\Requests\Version\VersionReleaseRequest;
+use BugrovWeb\YandexTracker\Api\Requests\Version\VersionArchiveRequest;
 use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
 
 /**
