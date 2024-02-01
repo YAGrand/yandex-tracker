@@ -25,8 +25,8 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method UserEntity getAssignee()
  * @method QueueEntity getQueue()
  * @method DateTime getUpdatedAt()
- * @method array getStatus()
- * @method array getPreviousStatus()
+ * @method StatusEntity getStatus()
+ * @method StatusEntity getPreviousStatus()
  * @method bool getFavorite()
  */
 class IssueEntity extends Entity
