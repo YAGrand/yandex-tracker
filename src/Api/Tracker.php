@@ -15,6 +15,7 @@ use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
  * @method External external() Класс для работы с внешними приложениями
  * @method Attachment attachment() Класс для работы с прикрепленными файлами
  * @method Queue queue() Класс для работы с очередями
+ * @method Status status() Класс для работы с версиями
  * @method Version version() Класс для работы с версиями
  * @method Board board() Класс для работы с досками
  * @method Country country() Класс для работы со странами

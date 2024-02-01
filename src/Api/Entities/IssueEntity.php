@@ -53,7 +53,7 @@ class IssueEntity extends Entity
     protected ?UserEntity $assignee;
     protected ?QueueEntity $queue;
     protected ?DateTime $updatedAt;
-    protected ?array $status;
-    protected ?array $previousStatus;
+    protected ?StatusEntity $status;
+    protected ?StatusEntity $previousStatus;
     protected ?bool $favorite;
 }

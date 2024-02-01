@@ -21,6 +21,7 @@ class TrackerFactory
         'external',
         'attachment',
         'queue',
+        'status',
         'version',
         'board',
         'country',
