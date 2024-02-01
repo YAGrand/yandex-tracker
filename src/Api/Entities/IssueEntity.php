@@ -11,7 +11,7 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method string getOriginalEstimation()
  * @method DateTime getStatusStartTime()
  * @method UserEntity getUpdatedBy()
- * @method string getStatusType()
+ * @method array getStatusType()
  * @method string getSpent()
  * @method array getBoards()
  * @method array getType()
@@ -39,7 +39,7 @@ class IssueEntity extends Entity
     protected ?string $originalEstimation;
     protected ?DateTime $statusStartTime;
     protected ?UserEntity $updatedBy;
-    protected ?string $statusType;
+    protected ?array $statusType;
     protected ?string $spent;
     protected ?array $boards;
     protected ?array $type;
