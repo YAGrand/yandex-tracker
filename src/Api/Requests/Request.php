@@ -18,6 +18,7 @@ class Request
      * @var string|null URL запроса
      */
     protected ?string $url;
+    protected static ?string $entityName = '';
 
     /**
      * ACTION - действие в API (например, issue)
@@ -100,6 +101,8 @@ class Request
 
         $client->setMultiPartRequest($this->multipartRequest);
 
-        return $client->prepareRequest(static::METHOD, $this->url, $this->data['bodyParams'], $this->data['queryParams']);
+        $entityName = substr(__NAMESPACE__, 0, -9) . '\\Entities\\'. (!empty(static::$entityName)?static::$entityName:'Entity');
+
+        return $client->prepareRequest(static::METHOD, $this->url, $this->data['bodyParams'], $this->data['queryParams'], $entityName);
     }
 }

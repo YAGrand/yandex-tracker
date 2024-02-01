@@ -10,11 +10,14 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @see https://cloud.yandex.ru/docs/tracker/concepts/issues/get-issue
  *
  * @method IssueGetRequest expand(string $field) Дополнительные поля, которые будут включены в ответ
+ * @method \BugrovWeb\YandexTracker\Api\Responses\IssueResponse send()
  */
 class IssueGetRequest extends IssueRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_GET;
+    
+    protected static ?string $entityName = 'IssueEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

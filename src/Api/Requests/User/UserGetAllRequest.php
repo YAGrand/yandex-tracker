@@ -11,11 +11,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  *
  * @method UserGetAllRequest perPage(int $count) Количество пользователей на странице ответа
  * @method UserGetAllRequest page(int $pageNumber) Номер страницы ответа
+ * @method \BugrovWeb\YandexTracker\Api\Responses\UserCollectionResponse send()
  */
 class UserGetAllRequest extends UserRequest
 {
     const ACTION = 'users';
     const METHOD = Client::METHOD_GET;
+    protected static ?string $entityName = 'UserCollectionEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

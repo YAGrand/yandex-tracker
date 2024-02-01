@@ -15,12 +15,14 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method QueueCreateRequest defaultType(string $type) Идентификатор или ключ типа задач по умолчанию. Обязательное
  * @method QueueCreateRequest defaultPriority(string $priority) Идентификатор или ключ приоритета задач по умолчанию. Обязательное
  * @method QueueCreateRequest issueTypesConfig(array $configList) Массив с настройками типов задач очереди. Обязательное
+ * @method \BugrovWeb\YandexTracker\Api\Responses\QueueResponse send()
  */
 class QueueCreateRequest extends QueueRequest
 {
     const ACTION = 'queues';
     const METHOD = Client::METHOD_POST;
 
+    protected static ?string $entityName = 'QueueEntity';
     /**
      * @var array|string[] Данные для отправки в запросе
      */
