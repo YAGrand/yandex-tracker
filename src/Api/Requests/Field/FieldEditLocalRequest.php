@@ -17,11 +17,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method FieldEditLocalRequest readonly(bool $readonly) Возможность редактировать значение поля
  * @method FieldEditLocalRequest visible(bool $visible) Признак отображения поля в интерфейсе
  * @method FieldEditLocalRequest hidden(bool $hidden) Признак видимости поля в интерфейсе
+ * @method \BugrovWeb\YandexTracker\Api\Responses\FieldResponse send()
  */
 class FieldEditLocalRequest extends FieldRequest
 {
     const ACTION = 'queues';
     const METHOD = Client::METHOD_PATCH;
+    protected static ?string $entityName = 'FieldEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

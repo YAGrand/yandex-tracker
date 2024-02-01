@@ -3,7 +3,7 @@
 namespace BugrovWeb\YandexTracker\Api\Entities;
 
 /**
- * Комментарий
+ * 
  * 
  * @method string getSelf()
  * @method int getId()

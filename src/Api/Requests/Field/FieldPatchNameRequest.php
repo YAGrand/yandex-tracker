@@ -12,11 +12,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method FieldPatchNameRequest version(string|int $fieldVersion) Версия поля задачи. Обязательное
  *
  * @method FieldPatchNameRequest name(array $names) Массив с информацией об имени поля задачи. Ключи: en (на английском), ru (на русском) Обязательное
+ * @method \BugrovWeb\YandexTracker\Api\Responses\FieldResponse send()
  */
 class FieldPatchNameRequest extends FieldRequest
 {
     const ACTION = 'fields';
     const METHOD = Client::METHOD_PATCH;
+    protected static ?string $entityName = 'FieldEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

@@ -20,11 +20,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method FieldCreateLocalRequest visible(bool $visible) Признак отображения поля в интерфейсе
  * @method FieldCreateLocalRequest hidden(bool $hidden) Признак видимости поля в интерфейсе
  * @method FieldCreateLocalRequest container(bool $multiple) Признак возможности указать в поле одновременно несколько значений
+ * @method \BugrovWeb\YandexTracker\Api\Responses\FieldResponse send()
  */
 class FieldCreateLocalRequest extends FieldRequest
 {
     const ACTION = 'queues';
     const METHOD = Client::METHOD_POST;
+    protected static ?string $entityName = 'FieldEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

@@ -3,7 +3,7 @@
 namespace BugrovWeb\YandexTracker\Api\Entities;
 
 /**
- * Комментарий
+ * 
  * 
  * @method string getSelf()
  * @method int getId()
@@ -18,10 +18,10 @@ class StatusEntity extends Entity
 {
     protected string $self;
     protected int $id;
-    protected int $version;
-    protected string $key;
+    protected ?int $version;
+    protected ?string $key;
     protected string $name;
-    protected string $description;
-    protected int $order;
-    protected string $type;
+    protected ?string $description;
+    protected ?int $order;
+    protected ?string $type;
 }

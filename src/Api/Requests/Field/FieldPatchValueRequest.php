@@ -19,11 +19,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method FieldPatchValueRequest hidden(bool $hidden) Признак видимости поля в интерфейсе
  * @method FieldPatchValueRequest visible(bool $visible) Признак отображения поля в интерфейсе
  * @method FieldPatchValueRequest optionsProvider(array $options) Массив с информацией о допустимых значениях поля. Ключи массива: type, values
+ * @method \BugrovWeb\YandexTracker\Api\Responses\FieldResponse send()
  */
 class FieldPatchValueRequest extends FieldRequest
 {
     const ACTION = 'fields';
     const METHOD = Client::METHOD_PATCH;
+    protected static ?string $entityName = 'FieldEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

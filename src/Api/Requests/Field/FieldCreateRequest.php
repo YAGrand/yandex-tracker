@@ -20,11 +20,13 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method FieldCreateRequest visible(bool $visible) Признак отображения поля в интерфейсе
  * @method FieldCreateRequest hidden(bool $hidden) Признак видимости поля в интерфейсе
  * @method FieldCreateRequest container(bool $multiple) Признак возможности указать в поле одновременно несколько значений
+ * @method \BugrovWeb\YandexTracker\Api\Responses\FieldResponse send()
  */
 class FieldCreateRequest extends FieldRequest
 {
     const ACTION = 'fields';
     const METHOD = Client::METHOD_POST;
+    protected static ?string $entityName = 'FieldEntity';
 
     /**
      * @var array|string[] Данные для отправки в запросе

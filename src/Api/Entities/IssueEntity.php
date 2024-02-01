@@ -28,6 +28,7 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method StatusEntity getStatus()
  * @method StatusEntity getPreviousStatus()
  * @method bool getFavorite()
+ * @method VersionEntityCollection getFixVersions()
  */
 class IssueEntity extends Entity
 {
@@ -56,4 +57,5 @@ class IssueEntity extends Entity
     protected ?StatusEntity $status;
     protected ?StatusEntity $previousStatus;
     protected ?bool $favorite;
+    protected ?VersionEntityCollection $fixVersions;
 }
