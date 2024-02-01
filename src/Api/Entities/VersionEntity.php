@@ -20,12 +20,12 @@ class VersionEntity extends Entity
 {
     protected string $self;
     protected int $id;
-    protected int $version;
+    protected ?int $version;
     protected string $name;
-    protected QueueEntity $queue;
-    protected DateTime $startDate;
-    protected DateTime $dueDate;
-    protected DateTime $releasedAt;
-    protected bool $released;
-    protected bool $archived;
+    protected ?QueueEntity $queue;
+    protected ?DateTime $startDate;
+    protected ?DateTime $dueDate;
+    protected ?DateTime $releasedAt;
+    protected ?bool $released;
+    protected ?bool $archived;
 }

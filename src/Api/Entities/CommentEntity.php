@@ -19,13 +19,13 @@ class CommentEntity extends Entity
 {
     protected string $self;
     protected int $id;
-    protected string $longId;
-    protected string $text;
-    protected UserEntity $createdBy;
-    protected UserEntity $updatedBy;
-    protected DateTime $createdAt;
-    protected DateTime $updatedAt;
-    protected int $version;
-    protected string $type;
-    protected string $transport;
+    protected ?string $longId;
+    protected ?string $text;
+    protected ?UserEntity $createdBy;
+    protected ?UserEntity $updatedBy;
+    protected ?DateTime $createdAt;
+    protected ?DateTime $updatedAt;
+    protected ?int $version;
+    protected ?string $type;
+    protected ?string $transport;
 }

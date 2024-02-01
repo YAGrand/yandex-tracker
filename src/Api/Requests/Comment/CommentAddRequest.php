@@ -15,12 +15,14 @@ use BugrovWeb\YandexTracker\Api\Client;
  * @method CommentAddRequest attachmentIds(array|string[] $attachments) Список идентификаторов вложений
  * @method CommentAddRequest summonees(array $summonees) Идентификаторы или логины призванных пользователей
  * @method CommentAddRequest maillistSummonees(array|string[] $mailList) Список рассылок, призванных в комментарии
+ * @method \BugrovWeb\YandexTracker\Api\Responses\CommentResponse send()
  */
 class CommentAddRequest extends CommentRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_POST;
 
+    protected static ?string $entityName = 'CommentEntity';
     /**
      * @var array|string[] Данные для отправки в запросе
      */

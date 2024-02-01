@@ -27,21 +27,21 @@ class UserEntity extends Entity
 {
     protected string $self;
     protected int $uid;
-    protected string $login;
-    protected int $trackerUid;
-    protected int $passportUid;
+    protected ?string $login;
+    protected ?int $trackerUid;
+    protected ?int $passportUid;
     protected string $cloudUid;
-    protected string $firstName;
-    protected string $lastName;
-    protected string $display;
-    protected string $email;
-    protected bool $external;
-    protected bool $hasLicense;
-    protected bool $dismissed;
-    protected bool $useNewFilters;
-    protected bool $disableNotifications;
-    protected string $firstLoginDate;
-    protected string $lastLoginDate;
-    protected bool $welcomeMailSent;
-    protected array $sources;
+    protected ?string $firstName;
+    protected ?string $lastName;
+    protected ?string $display;
+    protected ?string $email;
+    protected ?bool $external;
+    protected ?bool $hasLicense;
+    protected ?bool $dismissed;
+    protected ?bool $useNewFilters;
+    protected ?bool $disableNotifications;
+    protected ?string $firstLoginDate;
+    protected ?string $lastLoginDate;
+    protected ?bool $welcomeMailSent;
+    protected ?array $sources;
 }

@@ -10,6 +10,7 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method string getKey()
  * @method int getVersion()
  * @method string getName()
+ * @method string getDisplay()
  * @method string getDescription()
  * @method UserEntity getLead()
  * @method bool getAssignAuto()
@@ -31,21 +32,22 @@ class QueueEntity extends Entity
     protected string $self;
     protected int $id;
     protected string $key;
-    protected int $version;
-    protected string $name;
-    protected string $description;
-    protected UserEntity $lead;
-    protected bool $assignAuto;
-    protected array $defaultType;
-    protected array $defaultPriority;
-    protected bool $denyVoting;
-    protected bool $denyConductorAutolink;
-    protected bool $denyTrackerAutolink;
-    protected bool $useComponentPermissionsIntersection;
-    protected bool $addSummoneeToIssueAccess;
-    protected bool $addCommentAuthorToIssueFollowers;
-    protected string $workflowActionsStyle;
-    protected bool $useLastSignature;
-    protected string $permissionDeniedMessage;
-    protected string $permissionDeniedHtml;
+    protected ?int $version;
+    protected ?string $name;
+    protected ?string $display;
+    protected ?string $description;
+    protected ?UserEntity $lead;
+    protected ?bool $assignAuto;
+    protected ?array $defaultType;
+    protected ?array $defaultPriority;
+    protected ?bool $denyVoting;
+    protected ?bool $denyConductorAutolink;
+    protected ?bool $denyTrackerAutolink;
+    protected ?bool $useComponentPermissionsIntersection;
+    protected ?bool $addSummoneeToIssueAccess;
+    protected ?bool $addCommentAuthorToIssueFollowers;
+    protected ?string $workflowActionsStyle;
+    protected ?bool $useLastSignature;
+    protected ?string $permissionDeniedMessage;
+    protected ?string $permissionDeniedHtml;
 }

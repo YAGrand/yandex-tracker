@@ -11,12 +11,14 @@ use BugrovWeb\YandexTracker\Api\Client;
  *
  * @method CommentEditRequest text(string $comment) Скорректированный комментарий к задаче. Обязательное
  * @method CommentEditRequest attachmentIds(array|string[] $attachments) Список идентификаторов вложений
+ * @method \BugrovWeb\YandexTracker\Api\Responses\CommentResponse send()
  */
 class CommentEditRequest extends CommentRequest
 {
     const ACTION = 'issues';
     const METHOD = Client::METHOD_PATCH;
 
+    protected static ?string $entityName = 'CommentEntity';
     /**
      * @var array|string[] Данные для отправки в запросе
      */
