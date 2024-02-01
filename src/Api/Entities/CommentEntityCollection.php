@@ -7,6 +7,7 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method void add(CommentEntity $entity)
  * @method void setEntities(CommentEntity[] $entity)
  * @method CommentEntity fetch()
+ * @method CommentEntity current()
  * @method CommentEntityCollection filter()
  */
 class CommentEntityCollection extends EntityCollection

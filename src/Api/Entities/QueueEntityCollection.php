@@ -7,6 +7,7 @@ namespace BugrovWeb\YandexTracker\Api\Entities;
  * @method void add(QueueEntity $entity)
  * @method void setEntities(QueueEntity[] $entity)
  * @method QueueEntity fetch()
+ * @method QueueEntity current()
  * @method QueueEntityCollection filter()
  */
 class QueueEntityCollection extends EntityCollection

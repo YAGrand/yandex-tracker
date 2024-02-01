@@ -66,8 +66,10 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 
 	/**
 	 * Get next element
+     * 
+     * @return Entity|false
 	 */
-	public function fetch(): Entity
+	public function fetch()
 	{
 		return next($this->values);
 	}
@@ -75,7 +77,7 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	/**
 	 * Return the current element
 	 */
-	#[\ReturnTypeWillChange]
+	
 	public function current()
 	{
 		return current($this->values);
@@ -92,7 +94,7 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	/**
 	 * Return the key of the current element
 	 */
-	#[\ReturnTypeWillChange]
+	
 	public function key()
 	{
 		return key($this->values);
@@ -125,7 +127,7 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	/**
 	 * Offset to retrieve
 	 */
-	#[\ReturnTypeWillChange]
+	
 	public function offsetGet($offset)
 	{
 		if (isset($this->values[$offset]) || array_key_exists($offset, $this->values))
@@ -139,7 +141,7 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	/**
 	 * Offset to set
 	 */
-	#[\ReturnTypeWillChange]
+	
 	public function offsetSet($offset, $value): void
 	{
 		if($offset === null)
@@ -191,7 +193,7 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	 * JsonSerializable::jsonSerialize � Specify data which should be serialized to JSON
 	 * @return array
 	 */
-	#[\ReturnTypeWillChange]
+	
 	public function jsonSerialize()
 	{
 		return $this->values;
