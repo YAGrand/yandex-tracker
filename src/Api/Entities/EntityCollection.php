@@ -65,16 +65,6 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
     }
 
 	/**
-	 * Get next element
-     * 
-     * @return Entity|false
-	 */
-	public function fetch()
-	{
-		return next($this->values);
-	}
-
-	/**
 	 * Return the current element
 	 */
 	

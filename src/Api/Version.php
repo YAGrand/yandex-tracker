@@ -5,6 +5,7 @@ namespace BugrovWeb\YandexTracker\Api;
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionCreateRequest;
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionEditRequest;
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionGetRequest;
+use BugrovWeb\YandexTracker\Api\Requests\Version\VersionGetAllRequest;
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionReleaseRequest;
 use BugrovWeb\YandexTracker\Api\Requests\Version\VersionArchiveRequest;
 use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
@@ -14,7 +15,8 @@ use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
  *
  * @method VersionCreateRequest create() Создать версию
  * @method VersionEditRequest edit(int $vesionId) Изменить версию
- * @method VersionGetRequest get(int $vesionId) Изменить версию
+ * @method VersionGetRequest get(int $vesionId) Получить версию
+ * @method VersionGetAllRequest getAll() Получить все версии
  * @method VersionReleaseRequest release(int $vesionId) Выпустить в релиз версию
  * @method VersionArchiveRequest archive(int $vesionId) Отправить в архив версию
  */
@@ -27,6 +29,7 @@ class Version extends TrackerAction
         'create',
         'edit',
         'get',
+        'getAll',
         'release',
         'archive',
     ];
