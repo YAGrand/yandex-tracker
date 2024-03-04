@@ -9,6 +9,7 @@ use BugrovWeb\YandexTracker\Exceptions\TrackerConstructorException;
  * Класс для работы с компонентами. Выдает определенный экземпляр класса на основе магического метода
  *
  * @method ComponentGetAllRequest getAll() Получить список компонентов
+ * @method ComponentGetRequest get() Получить компонент
  */
 class Component extends TrackerAction
 {
@@ -17,6 +18,7 @@ class Component extends TrackerAction
      */
     protected array $methodsList = [
         'getAll',
+        'get',
     ];
 
     /**

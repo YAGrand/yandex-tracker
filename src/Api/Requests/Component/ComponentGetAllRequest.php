@@ -13,6 +13,7 @@ class ComponentGetAllRequest extends ComponentRequest
 {
     const ACTION = 'components';
     const METHOD = Client::METHOD_GET;
+    protected static ?string $entityName = 'ComponentEntityCollection';
 
     public function __construct()
     {
