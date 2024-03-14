@@ -74,6 +74,16 @@ implements \ArrayAccess, \Iterator, \Countable, \JsonSerializable
 	}
 
 	/**
+	 * Get current and move forward to next element
+	 */
+	public function fetch()
+	{
+		$current = $this->current();
+		$this->next($this->values);
+		return $current;
+	}
+
+	/**
 	 * Move forward to next element
 	 */
 	public function next(): void
